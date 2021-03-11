@@ -6,20 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private int _coins;
+    private const string Game = "Game";
 
-    public int Coins => _coins;
+    public int Coins { get; private set; }
     public float PlayerXPosition => transform.position.x;
 
-    public event UnityAction<int> CoinsChange;
+    public event UnityAction<int> CoinsChanging;
 
     public void ApplyCoins(int coin)
     {
-        _coins += coin;
-        CoinsChange?.Invoke(_coins);
+        Coins += coin;
+        CoinsChanging?.Invoke(Coins);
     }
+
     public void Die()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Game);
     }
 }

@@ -10,16 +10,16 @@ public class CoinsChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.CoinsChange += CoinsChange;
-        _text.text = _player.Coins.ToString();
+        _player.CoinsChanging += OnCoinsChanged;
+        OnCoinsChanged(_player.Coins);
     }
 
     private void OnDisable()
     {
-        _player.CoinsChange -= CoinsChange;
+        _player.CoinsChanging -= OnCoinsChanged;
     }
 
-    private void CoinsChange(int coins)
+    private void OnCoinsChanged(int coins)
     {
         _text.text = coins.ToString();
     }

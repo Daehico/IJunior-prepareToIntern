@@ -1986,6 +1986,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1134788290}
   - component: {fileID: 1134788289}
+  - component: {fileID: 1134788292}
+  - component: {fileID: 1134788291}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -2005,13 +2007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58b1d6c39a72754dbf9eb795a9a997d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minXDistance: 10
-  _maxXDistance: 20
-  _let: {fileID: 1298944687075029369, guid: b4b20d695680705458cb2967937e38df, type: 3}
-  _coin: {fileID: 7488996717462160390, guid: d651251ee9275d84e8188d2f374d728c, type: 3}
-  _minSpawnedCoins: 3
-  _maxSpawnedCoins: 5
-  _cooldownBetweenSpawn: 10
+  _cooldownBetweenSpawn: 5
+  _itemsSpawner:
+  - {fileID: 1134788292}
+  - {fileID: 1134788291}
 --- !u!4 &1134788290
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,6 +2025,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134788291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134788288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2673bf9e967e5c845b0fd108e2f01447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minXDistance: 5
+  _maxXDistance: 10
+  _let: {fileID: 1298944687075029369, guid: b4b20d695680705458cb2967937e38df, type: 3}
+--- !u!114 &1134788292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134788288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc67a70a80f7b241baaba9dfd1277b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minXDistance: 5
+  _maxXDistance: 10
+  _coin: {fileID: 7488996717462160390, guid: d651251ee9275d84e8188d2f374d728c, type: 3}
+  _minSpawnedCoins: 3
+  _maxSpawnedCoins: 5
+  _distanceBetweenCoins: 1
 --- !u!1 &1241351194
 GameObject:
   m_ObjectHideFlags: 0
