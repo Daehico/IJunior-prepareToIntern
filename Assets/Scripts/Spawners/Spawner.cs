@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private float _cooldownBetweenSpawn;
-    [SerializeField] private SpawnItem[] _itemsSpawner;
+    [SerializeField] private ItemSpawner[] _itemsSpawner;
 
     private float _curentTime;
 
@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
         if(_curentTime >= _cooldownBetweenSpawn)
         {
             var idOfSpawn = Random.Range(0, _itemsSpawner.Length);
-            _itemsSpawner[idOfSpawn].SpawnItems();
+            _itemsSpawner[idOfSpawn].Spawn();
             _curentTime = 0;
         }
     }

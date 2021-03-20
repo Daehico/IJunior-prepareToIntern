@@ -8,6 +8,6 @@ public class GroundMover : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(_player.PlayerXPosition, transform.position.y, transform.position.z);
+        transform.position = new Vector3(_player.transform.position.x, transform.position.y, transform.position.z);
     }
 }
