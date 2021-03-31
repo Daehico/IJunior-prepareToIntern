@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class LetSpawner : ItemSpawner
 {
-    public override Vector3 ChangeSpawnPosition()
+    private Vector3 _lastSpawnPosition;
+    private Vector3 _spawnPosition;
+
+    public override Vector3 NextSpawnPosition()
     {
         var spawnDistance = Random.Range(_minXDistance, _maxXDistance);
         return new Vector3(_lastSpawnPosition.x + spawnDistance, _lastSpawnPosition.y, _lastSpawnPosition.z);

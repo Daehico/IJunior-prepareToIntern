@@ -8,8 +8,8 @@ public abstract class ItemSpawner : MonoBehaviour
     [SerializeField] protected float _maxXDistance;
     [SerializeField] protected GameObject _item;
 
-    protected Vector3 _lastSpawnPosition;
-    protected Vector3 _spawnPosition;
+    private Vector3 _lastSpawnPosition;
+    private Vector3 _spawnPosition;
 
     private void Start()
     {
@@ -18,11 +18,11 @@ public abstract class ItemSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        _spawnPosition = ChangeSpawnPosition();
+        _spawnPosition = NextSpawnPosition();
         InstantiateItem(_item,_spawnPosition);
     }
 
     public abstract void InstantiateItem(GameObject spawnItem, Vector3 spawnPosition);
   
-    public abstract Vector3 ChangeSpawnPosition();
+    public abstract Vector3 NextSpawnPosition();
 }

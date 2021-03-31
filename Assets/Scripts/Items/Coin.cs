@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     {
         if(collision.TryGetComponent(out Player player))
         {
-            player.ApplyCoins(_cost);
+            player.AddCoins(_cost);
             Destroy(gameObject);
         }
     }

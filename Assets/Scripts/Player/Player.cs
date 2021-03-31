@@ -9,12 +9,12 @@ public class Player : MonoBehaviour
 {
     public int Coins { get; private set; }
 
-    public event UnityAction<int> CoinsChanging;
+    public event UnityAction<int> CoinsChanged;
 
-    public void ApplyCoins(int coins)
+    public void AddCoins(int coins)
     {
         Coins += coins;
-        CoinsChanging?.Invoke(Coins);
+        CoinsChanged?.Invoke(Coins);
     }
 
     public void Die()

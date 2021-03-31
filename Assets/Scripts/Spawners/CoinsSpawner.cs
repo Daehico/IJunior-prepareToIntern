@@ -8,7 +8,10 @@ public class CoinsSpawner : ItemSpawner
     [SerializeField] private int _maxSpawnedCoins;
     [SerializeField] private Vector3 _distanceBetweenCoins;
 
-    public override Vector3 ChangeSpawnPosition()
+    private Vector3 _lastSpawnPosition;
+    private Vector3 _spawnPosition;
+
+    public override Vector3 NextSpawnPosition()
     {
         var _curentSpawnedCoins = Random.Range(_minSpawnedCoins, _maxSpawnedCoins);    
         return new Vector3(_lastSpawnPosition.x + Random.Range(_minXDistance, _maxXDistance), _lastSpawnPosition.y, _lastSpawnPosition.z);      
